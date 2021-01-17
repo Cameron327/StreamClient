@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>People Detection in a Room</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Devin Cameron Johal">
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>People Detection in a Room </h1>
+
+    <p>Walk past this camera and see if it detects you</p>
+    <div id="locationbox">
+        <form id="forminside">
+            <input type="text" placeholder="Type Location Here" id="loc">
+            <input type="text" placeholder="Enter a max capacity" id="capacity">
+            <input type="text" placeholder="Type your phone number" id="num">
+            <button type="button" id="inputbutton">Save</button>
+        </form>
+    </div>
+    <div id="liveView" class="videoView" hidden="true">
+        <button id="webcamButton">Enable Webcam</button>
+        <video id="webcam" autoplay></video>
+    </div>
+
+    <!-- Import TensorFlow.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js" type="text/javascript"></script>
+
+    <!-- Load the coco-ssd model to use to recognize things in images -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+
+    <!-- Import the page's JavaScript to do some stuff -->
+    <script src="detect.js"></script>
+
+
+</body>
+
+</html>
